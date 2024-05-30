@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatbox Example</title>
+  <style>
+    .top-left {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+    }
+
+    .top-left div {
+      background-color: #f1f1f1;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .chatbox {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .chatbox img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .chatbox textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      resize: none;
+      overflow: hidden;
+      min-height: 40px;
+      max-height: 200px;
+    }
+
+    .chatbox button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-left">
+    <div>Text 1</div>
+    <div>Text 2</div>
+    <div>Text 3</div>
+  </div>
+
+  <div class="chatbox">
+    <img src="placeholder.jpg" alt="Placeholder Image">
+    <textarea placeholder="Type your message..."></textarea>
+    <button>Send</button>
+  </div>
+
+  <script>
+    const textarea = document.querySelector('.chatbox textarea');
+
+    textarea.addEventListener('input', function() {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 'px';
+    });
+  </script>
+</body>
+</html>
