@@ -21,20 +21,21 @@
   <div class="map">
     <img src="placeholder.jpg" alt="Placeholder Image">
   </div>
-  <div class="chatbox">
-    
-    <textarea placeholder="Type your message..."></textarea>
-    <button>Send</button>
-  </div>
 
-  
-  <script>
-    const textarea = document.querySelector('.chatbox textarea');
+  <section id="app">
 
-    textarea.addEventListener('input', function() {
-      this.style.height = 'auto';
-      this.style.height = this.scrollHeight + 'px';
-    });
-  </script>
+    <div class="chatbox">
+      <textarea placeholder="Type your message..."      
+       v-model="userInput"
+       @keyup.enter="addUserInput"
+       :style="{ height: textAreaHeight + 'px' }"
+       @input="adjustHeight"
+       ref="textarea"
+       ></textarea>
+      <button>Send</button>
+      </div>
+  </section>
+
+
 </body>
 </html>
