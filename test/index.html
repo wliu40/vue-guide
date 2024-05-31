@@ -13,25 +13,29 @@
 </head>
 <body>
   <section id="app">
-  <div class="top-left">
-    <div v-for="(msg, index) in userInputs" :key="index" class="message">
-      {{ msg }}
-      <button class="close-button" @click="deleteMessage(index)">x</button>
-  </div>
+  <div class="inputHistory">
 
+    <div v-for="(msg, index) in userInputs" :key="index" class="userInput">
+
+      <span class="message-text">{{ msg }}</span>
+      <!-- <button class="close-button" @click="deleteMessage(index)">x</button> -->
+    </div>
+
+  </div>
   <div class="map">
     <img src="Capture.PNG" alt="Placeholder Image">
   </div>
-    <div class="chatbox">
+  <div class="chatbox">
       <textarea placeholder="Type your message..."      
        v-model="userInput"
        @keyup.enter="addUserInput"
        :style="{ height: textAreaHeight + 'px' }"
        @input="adjustHeight"
-       ref="textarea"
-       ></textarea>
-      <button>Send</button>
-      </div>
+       ref="textarea"></textarea>
+       <button @click="addUserInput" class="send-button">Enter</button>
+      <!-- <button>Send</button> -->
+  </div>
+
   </section>
 
 
