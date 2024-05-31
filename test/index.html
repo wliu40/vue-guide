@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatbox Example</title>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+  rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/vue@next" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+  <script src="app.js" defer></script>
+
+</head>
+<body>
+  <div class="top-left">
+    <div>Text 1</div>
+    <div>Text 2</div>
+    <div>Text 3</div>
+  </div>
+
+  <div class="map">
+    <img src="placeholder.jpg" alt="Placeholder Image">
+  </div>
+  <div class="chatbox">
+    
+    <textarea placeholder="Type your message..."></textarea>
+    <button>Send</button>
+  </div>
+
+  
+  <script>
+    const textarea = document.querySelector('.chatbox textarea');
+
+    textarea.addEventListener('input', function() {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 'px';
+    });
+  </script>
+</body>
+</html>
