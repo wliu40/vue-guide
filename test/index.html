@@ -12,18 +12,15 @@
 
 </head>
 <body>
+  <section id="app">
   <div class="top-left">
-    <div>Text 1</div>
-    <div>Text 2</div>
-    <div>Text 3</div>
+    <div v-for="(msg, index) in userInputs" :key="index" class="message">
+      {{ msg }}
   </div>
 
   <div class="map">
-    <img src="placeholder.jpg" alt="Placeholder Image">
+    <img src="Capture.PNG" alt="Placeholder Image">
   </div>
-
-  <section id="app">
-
     <div class="chatbox">
       <textarea placeholder="Type your message..."      
        v-model="userInput"

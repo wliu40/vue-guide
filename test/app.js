@@ -9,14 +9,15 @@ const app = Vue.createApp({
     },
     methods: {
         showAlert() {
-            alert('Hello World!')
+            alert('We need to know your origin to plan your trip!')
         },
         addUserInput(event) {
-            this.userInput = event.target.value;
-            this.userInputs.push(event.target.value);
-            console.log(this.userInput);
-            this.userInput = '';
-            console.log(this.userInput.height);
+            if (this.userInput.trim() !== '') {
+                this.userInputs.unshift(this.userInput.trim());
+                console.log(this.userInputs);
+                this.userInput = '';
+                this.textAreaHeight = 40; // Reset height
+            }
         },
         adjustHeight() {
             this.$nextTick(() => {
