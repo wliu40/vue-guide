@@ -11,6 +11,9 @@ const app = Vue.createApp({
         showAlert() {
             alert('We need to know your origin to plan your trip!')
         },
+        deleteMessage(index) {
+            this.userInputs.splice(index, 1); // Remove the message at the given index
+          },
         addUserInput(event) {
             if (this.userInput.trim() !== '') {
                 this.userInputs.unshift(this.userInput.trim());
@@ -25,7 +28,8 @@ const app = Vue.createApp({
               if (textarea.scrollHeight > textarea.clientHeight) {
                 this.textAreaHeight = textarea.scrollHeight;
               }
-            });},
+            });
+        },
 
     }});
 app.mount('#app');

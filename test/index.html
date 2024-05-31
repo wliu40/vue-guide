@@ -16,6 +16,7 @@
   <div class="top-left">
     <div v-for="(msg, index) in userInputs" :key="index" class="message">
       {{ msg }}
+      <button class="close-button" @click="deleteMessage(index)">x</button>
   </div>
 
   <div class="map">
