@@ -9,7 +9,9 @@ import Friend from './components/Friend.vue';
       :key="friend.id"
       :friendName="friend.name"
       :phoneNumber="friend.phone"
-      :emailAddress="friend.email">  </Friend>
+      :emailAddress="friend.email"
+      @edit-email="editEmail"> 
+    </Friend>
   </div>
 </template>
 
@@ -36,6 +38,12 @@ export default {
           }
         ]
       }
+    },
+    methods: {
+      editEmail(email){
+        console.log(email);
+      }
     }
+
 };
 </script>

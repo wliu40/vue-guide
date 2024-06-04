@@ -3,11 +3,9 @@
         <strong>{{ friendName }}</strong>
         <button @click="toggleDetails">{{ detailsAreVisible? 'Hide': 'Show' }}</button>
         <ul v-if="detailsAreVisible">
-
             <p>Phone: {{ phoneNumber }}</p>
             <p>Email: {{ emailAddress }}</p>
-
-
+            <button @click="editFriend">Edit</button>
         </ul>
     </div>
 </template>
@@ -37,6 +35,9 @@
     methods: {
         toggleDetails() {
             this.detailsAreVisible = !this.detailsAreVisible;
+        },
+        editFriend() {
+            this.$emit('edit-email', this.emailAddress);
         }
     }
   };
