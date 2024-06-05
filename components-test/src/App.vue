@@ -1,5 +1,6 @@
 <script setup>
 import Friend from './components/Friend.vue';
+import NewFriend from './components/NewFriend.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import Friend from './components/Friend.vue';
       :emailAddress="friend.email"
       @edit-email="editEmail"> 
     </Friend>
+    <NewFriend @add-friend="addFriend"></NewFriend>
   </div>
 </template>
 
@@ -42,6 +44,9 @@ export default {
     methods: {
       editEmail(email){
         console.log(email);
+      },
+      addFriend(friend){
+        this.friends.push(friend);
       }
     }
 
