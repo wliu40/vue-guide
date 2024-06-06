@@ -1,23 +1,25 @@
 <template>
-    <ul class="comment-container">
-      <div v-if="isEditing">
-        <input
-          v-model="editableComment"
-          @keyup.enter="saveComment"
-          @blur="saveComment"
-          class="comment-input"
-          ref="input"
-        />
-      </div>
-      <p v-else class="comment-text">{{ truncatedComment }}</p>
-      <div class="menu-container">
-        <span class="three-dots" @click="toggleMenu">...</span>
-        <div class="dropdown-menu" v-if="showMenu">
-          <button class="menu-option" @click="editComment">Rename</button>
-          <button class="menu-option" @click="deleteComment">Delete</button>
+    <div>
+        <ul class="comment-container">
+        <div v-if="isEditing">
+            <input
+            v-model="editableComment"
+            @keyup.enter="saveComment"
+            @blur="saveComment"
+            class="comment-input"
+            ref="input"
+            />
         </div>
-      </div>
-    </ul>
+        <p v-else class="comment-text">{{ truncatedComment }}</p>
+        <div class="menu-container">
+            <span class="three-dots" @click="toggleMenu">...</span>
+            <div class="dropdown-menu" v-if="showMenu">
+            <button class="menu-option" @click="editComment">Rename</button>
+            <button class="menu-option" @click="deleteComment">Delete</button>
+            </div>
+        </div>
+        </ul>
+    </div>
   </template>
   
   <script>
@@ -100,7 +102,7 @@
   
   .comment-text {
     margin: 0;
-    width: 150px;
+    width: 180px;
   }
   
   .comment-input {

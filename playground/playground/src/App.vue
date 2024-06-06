@@ -89,6 +89,8 @@ html, body {
   margin-top: 60px;
   top: 0;
   left: 0;
+  overflow-y: auto; 
+  max-height: 800px;
   /* margin: 30px; */
 }
 
