@@ -1,5 +1,5 @@
 <template>
-  <div id="app">    
+  <div id="app" class="app-background">    
     <div class="comments-container">
       <Comment
         v-for="(comment, index) in comments"
@@ -9,15 +9,14 @@
         @delete="deleteComment(index)"
       />
     </div>
-    <div>
+    <!-- <div>
       <img :src="imageUrl" alt="Example Image">
-
-    </div>
+    </div> -->
     <div class="add-comment-container">
       <AddComment @add-comment="addComment" />
-    </div>      
-
+    </div> 
   </div>
+
 </template>
 
 <script>
@@ -66,11 +65,22 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
 #app {
-  position: relative;
-  width: 100%;
-  height: 90vh; /* Full viewport height */
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
 .comments-container {
