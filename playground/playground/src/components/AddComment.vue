@@ -1,7 +1,7 @@
 <template>
     <div class="chatbox-container">
         <textarea ref="chatbox" id="chatbox" 
-        rows="1" 
+        rows="2" 
         placeholder="Type your message..." 
         v-model="newComment"
         @input="adjustHeight" 
@@ -26,6 +26,7 @@
         if (this.newComment.trim()) {
           this.$emit('add-comment', this.newComment);
           this.newComment = '';
+          this.$refs.chatbox.style.height = 'auto';
         }
       },
       adjustHeight() {

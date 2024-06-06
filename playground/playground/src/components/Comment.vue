@@ -1,5 +1,5 @@
 <template>
-    <div class="comment-container">
+    <ul class="comment-container">
       <div v-if="isEditing">
         <input
           v-model="editableComment"
@@ -9,7 +9,7 @@
           ref="input"
         />
       </div>
-      <p v-else class="comment-text">{{ comment }}</p>
+      <p v-else class="comment-text">{{ truncatedComment }}</p>
       <div class="menu-container">
         <span class="three-dots" @click="toggleMenu">...</span>
         <div class="dropdown-menu" v-if="showMenu">
@@ -17,7 +17,7 @@
           <button class="menu-option" @click="deleteComment">Delete</button>
         </div>
       </div>
-    </div>
+    </ul>
   </template>
   
   <script>
@@ -29,12 +29,20 @@
         required: true
       }
     },
+    
     data() {
       return {
         showMenu: false,
         isEditing: false,
         editableComment: this.comment
       };
+    },
+    computed: {
+        truncatedComment() {
+          return this.comment.length > 20
+            ? this.comment.slice(0, 20) + '...'
+            : this.comment;
+        }
     },
     methods: {
       toggleMenu() {
@@ -86,12 +94,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 400px;
+    max-width: 200px;
     margin: 20px;
   }
   
   .comment-text {
     margin: 0;
+    width: 150px;
   }
   
   .comment-input {

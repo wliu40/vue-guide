@@ -85,9 +85,11 @@ html, body {
 
 .comments-container {
   position: absolute;
+  margin-left: 8%;
+  margin-top: 60px;
   top: 0;
   left: 0;
-  margin: 15px; /* Optional: margin for spacing */
+  /* margin: 30px; */
 }
 
 .add-comment-container {
