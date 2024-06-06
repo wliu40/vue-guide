@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="Comments">
       <Comment
         v-for="(comment, index) in comments"
         :key="index"
@@ -15,7 +15,7 @@
   import Comment from './Comment.vue';
   
   export default {
-    name: 'App',
+    name: 'Comments',
     components: {
       Comment
     },
@@ -44,11 +44,11 @@
   </script>
   
   <style>
-  #app {
+  #Comments {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 20px;    
   }
   </style>
   

@@ -80,8 +80,8 @@
   <style scoped>
   .comment-container {
     position: relative;
-    border: 1px solid #ccc;
-    padding: 10px;
+    border: 0px solid #ccc;
+    padding: 5px;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -131,6 +131,9 @@
   }
   
   .menu-option:hover {
+    background-color: #f0f0f0;
+  }
+  .comment-container:hover {
     background-color: #f0f0f0;
   }
   </style>

@@ -1,23 +1,41 @@
 <template>
-  <div id="app">
-    <Comment
-      v-for="(comment, index) in comments"
-      :key="index"
-      :comment="comment"
-      @rename="renameComment(index, $event)"
-      @delete="deleteComment(index)"
-    />
+  <div id="app">    
+    <div class="comments-container">
+      <Comment
+        v-for="(comment, index) in comments"
+        :key="index"
+        :comment="comment"
+        @rename="renameComment(index, $event)"
+        @delete="deleteComment(index)"
+      />
+    </div>
+    <div>
+      <img :src="imageUrl" alt="Example Image">
+
+    </div>
+    <div class="add-comment-container">
+      <AddComment @add-comment="addComment" />
+    </div>      
+
   </div>
 </template>
 
 <script>
 import { ref } from 'vue';
-import Comment from './components/Comments.vue';
+import AddComment from './components/AddComment.vue';
+import Comment from './components/Comment.vue';
+import Myimage from './assets/vue.svg';
 
 export default {
   name: 'App',
   components: {
+    AddComment,
     Comment
+  },
+  data(){
+    return {
+      imageUrl: Myimage,
+    };
   },
   setup() {
     const comments = ref([
@@ -25,6 +43,10 @@ export default {
       'This is the second comment.',
       'This is the third comment.'
     ]);
+
+    const addComment = (newComment) => {
+      comments.value.unshift(newComment);
+    };
 
     const renameComment = (index, newComment) => {
       comments.value[index] = newComment;
@@ -36,6 +58,7 @@ export default {
 
     return {
       comments,
+      addComment,
       renameComment,
       deleteComment
     };
@@ -45,9 +68,24 @@ export default {
 
 <style>
 #app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Full viewport height */
+}
+
+.comments-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 15px; /* Optional: margin for spacing */
+}
+
+.add-comment-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 15px; /* Optional: margin for spacing */
+
 }
 </style>
