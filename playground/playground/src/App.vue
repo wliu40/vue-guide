@@ -133,7 +133,7 @@ html, body {
 .events-container {
   position: fixed;
   top: 0;
-  right: 8%;
+  right: 3%;
   width: 25%;
   height: 100vh; /* Adjust height as needed */
   overflow-y: auto; /* To handle overflow content */

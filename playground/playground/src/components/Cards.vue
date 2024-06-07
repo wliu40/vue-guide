@@ -4,12 +4,14 @@
         <template v-slot:icon>
           <img :src="event.icon" alt="icon" class="event-icon">
         </template>
+            
         <template v-slot:timestamp>
           {{ event.timestamp }}
         </template>
         <template v-slot:category>
           {{ event.category }}
         </template>
+
         <template v-slot:detail>
           {{ event.detail }}
         </template>
@@ -22,11 +24,13 @@
   
   <script>
   import Card from './Card.vue';
+//   import Card2 from './Card2.vue';
   
   export default {
     name: 'Cards',
     components: {
       Card,
+    //   Card2,
     },
     props: {
       events: {
@@ -42,6 +46,7 @@
     display: flex;
     flex-direction: column;
   }
+
   .event-icon {
     width: 40px;
     height: 40px;
