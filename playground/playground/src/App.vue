@@ -9,12 +9,15 @@
         @delete="deleteComment(index)"
       />
     </div>
-    <!-- <div>
+    <div>
       <img :src="imageUrl" alt="Example Image">
-    </div> -->
+    </div>
     <div class="add-comment-container">
       <AddComment @add-comment="addComment" />
-    </div> 
+    </div>
+    <div class="events-container">
+      <Cards :events="events" />
+    </div>
   </div>
 
 </template>
@@ -24,16 +27,40 @@ import { ref } from 'vue';
 import AddComment from './components/AddComment.vue';
 import Comment from './components/Comment.vue';
 import Myimage from './assets/vue.svg';
+import Cards from './components/Cards.vue';
 
 export default {
   name: 'App',
   components: {
     AddComment,
-    Comment
+    Comment,
+    Cards,
   },
   data(){
     return {
       imageUrl: Myimage,
+      events: [
+        {
+          timestamp: '2023-06-01 10:00:00',
+          category: 'Category 1',
+          detail: 'Detail for event 1',
+          link: 'https://example.com/1',
+          icon: 'https://example.com/icon1.png',
+        },
+        {
+          timestamp: '2023-06-02 11:00:00',
+          category: 'Category 2',
+          detail: 'Detail for event 2',
+          link: 'https://example.com/2',
+          icon: 'https://example.com/icon2.png',
+        },
+        {
+          timestamp: '2023-06-03 12:00:00',
+          category: 'Category 3',
+          detail: 'Detail for event 3',
+          link: 'https://example.com/3',
+          icon: 'https://example.com/icon3.png',
+        },]
     };
   },
   setup() {
@@ -102,4 +129,14 @@ html, body {
   margin-bottom: 15px; /* Optional: margin for spacing */
 
 }
+
+.events-container {
+  position: fixed;
+  top: 0;
+  right: 8%;
+  width: 25%;
+  height: 100vh; /* Adjust height as needed */
+  overflow-y: auto; /* To handle overflow content */
+}
+
 </style>
