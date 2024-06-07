@@ -7,8 +7,10 @@
         @input="adjustHeight" 
         @keyup.enter="addComment"
         ></textarea>
-      <button @click="addComment" id="submit-button">Submit</button>
+        <button @click="addComment" id="submit-button">Submit</button>
     </div>
+
+ 
 
 
   </template>
@@ -62,12 +64,15 @@
     cursor: pointer;
   } */
 
-  .chatbox-container {
+.chatbox-container {
   position: relative;
-   width: 700px;
+  display: flex;
+  width: 700px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 #chatbox {
@@ -82,6 +87,11 @@
   box-sizing: border-box;
 }
 
+#submit-button {
+  resize: none;
+  padding: 20px;
+  font-size: 16px;
+}
 
   </style>
   

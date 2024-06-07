@@ -24,13 +24,11 @@
   
   <script>
   import Card from './Card.vue';
-//   import Card2 from './Card2.vue';
   
   export default {
     name: 'Cards',
     components: {
       Card,
-    //   Card2,
     },
     props: {
       events: {
