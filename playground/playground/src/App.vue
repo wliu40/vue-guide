@@ -41,6 +41,7 @@ import Comment from './components/Comment.vue';
 // import Comments from './components/Comments.vue';
 import Myimage from './assets/vue.svg';
 import Cards from './components/Cards.vue';
+import ConfirmDelete from './components/ConfirmDelete.vue';
 
 export default {
   name: 'App',
@@ -48,7 +49,7 @@ export default {
     AddComment,
     Comment,
     Cards,
-    // Comments
+    ConfirmDelete
   },
   data(){
     return {
