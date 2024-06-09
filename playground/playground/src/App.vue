@@ -4,6 +4,7 @@
       <div class="topbar">
         <h2>This is the bar!</h2>
       </div>
+
       <div class="layout-content">   
         <div class="comments-container">
           <Comment
@@ -11,7 +12,8 @@
             :key="index"
             :comment="comment"
             @rename="renameComment(index, $event)"
-            @delete="deleteComment(index)"
+            @delete="showConfirmDialog(index)"
+
           />
         </div>
 
@@ -26,8 +28,14 @@
           <Cards :events="events" class="events-seq"/>
           <button @click="saveEvent" class="events-save-button">Export</button>
         </div>
-
       </div>
+
+      <ConfirmDelete
+        :visible="showDialog"
+        @confirm="deleteComment"
+        @cancel="cancelDelete"
+      />
+
     </div>
 
   </div>
@@ -38,7 +46,6 @@
 import { ref } from 'vue';
 import AddComment from './components/AddComment.vue';
 import Comment from './components/Comment.vue';
-// import Comments from './components/Comments.vue';
 import Myimage from './assets/vue.svg';
 import Cards from './components/Cards.vue';
 import ConfirmDelete from './components/ConfirmDelete.vue';
@@ -54,6 +61,8 @@ export default {
   data(){
     return {
       imageUrl: Myimage,
+      showDialog: false,
+      commentToDelete: null,
       comments: [
       'first comment',
       'second comment',
@@ -83,17 +92,34 @@ export default {
     };
   },
   methods: {
+    showConfirmDialog(commentId) {
+      this.commentToDelete = commentId;
+      
+      this.showDialog = true;
+      this.commentToDelete = commentId;
+      console.log('commentId', commentId);
+      console.log('commentToDelete', this.commentToDelete);
+    },
     addComment(newComment) {
       this.comments.unshift(newComment);
     },
     renameComment(index, newComment) {
       this.comments[index] = newComment;
     },
-    deleteComment(index) {
-      this.comments.splice(index, 1);
+    deleteComment() {
+
+      console.log('commentToDelete in deletecomment', this.commentToDelete);
+      // this.comments = this.comments.filter(comment => comment.id !== this.commentToDelete);
+      this.comments.splice(this.commentToDelete, 1);
+      this.showDialog = false;
+      this.commentToDelete = null;
     },
     saveEvent() {
       console.log('Exporting events...');
+    },
+    cancelDelete() {
+      this.showDialog = false;
+      this.commentToDelete = null;
     }
   },
   // setup() {

@@ -1,17 +1,11 @@
 <template>
-    <div>
-      <div v-if="showDialog" class="dialog-overlay">
-        <div class="dialog-content">
-          <slot name="title">
-            <h2>Confirm Delete</h2>
-          </slot>
-          <slot name="body">
-            <p>Are you sure you want to delete this item?</p>
-          </slot>
-          <div class="dialog-actions">
-            <button @click="confirm">Confirm</button>
-            <button @click="cancel">Cancel</button>
-          </div>
+    <div v-if="visible" class="dialog-overlay">
+      <div class="dialog-content">
+        <h2>Confirm Delete</h2>
+        <p>Are you sure you want to delete this comment?</p>
+        <div class="dialog-actions">
+          <button @click="confirm">Confirm</button>
+          <button @click="cancel">Cancel</button>
         </div>
       </div>
     </div>
@@ -19,32 +13,18 @@
   
   <script>
   export default {
-    name: 'ConfirmDelete',
     props: {
       visible: {
         type: Boolean,
         required: true
       }
     },
-    data() {
-      return {
-        showDialog: this.visible
-      };
-    },
-    watch: {
-      visible(newVal) {
-        this.showDialog = newVal;
-      }
-    },
     methods: {
       confirm() {
         this.$emit('confirm');
-        this.showDialog = false;
-        this.$emit('update:visible', false);
       },
       cancel() {
-        this.showDialog = false;
-        this.$emit('update:visible', false);
+        this.$emit('cancel');
       }
     }
   };

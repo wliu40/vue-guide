@@ -67,10 +67,12 @@ export default {
       this.$emit('rename', this.editableComment);
     },
     deleteComment() {
-      if (confirm("Are you sure you want to delete this comment?")) {
-        this.showMenu = false;
-        this.$emit('delete');
-      }
+      // if (confirm("Are you sure you want to delete this comment?")) {
+      //   this.showMenu = false;
+      //   this.$emit('delete');
+      // }
+      this.showMenu = false;
+      this.$emit('delete', this.comment.id);
     }
   },
   watch: {
