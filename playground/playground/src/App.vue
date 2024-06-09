@@ -18,7 +18,15 @@
         </div>
 
         <div class="center-container">
-          <div> <img :src="imageUrl" alt="Example Image"> </div>
+          <div> 
+            <img :src="imageUrl" alt="Example Image"> 
+          </div>
+          
+          <div id="app">
+            <h1>Icon List</h1>
+            <MyIcons />
+          </div>
+
           <div class="add-comment-container">
             <AddComment @add-comment="addComment" />
           </div>
@@ -49,6 +57,7 @@ import Comment from './components/Comment.vue';
 import Myimage from './assets/vue.svg';
 import Cards from './components/Cards.vue';
 import ConfirmDelete from './components/ConfirmDelete.vue';
+import MyIcons from './components/MyIcons.vue';
 
 export default {
   name: 'App',
@@ -56,7 +65,8 @@ export default {
     AddComment,
     Comment,
     Cards,
-    ConfirmDelete
+    ConfirmDelete,
+    MyIcons
   },
   data(){
     return {
@@ -166,6 +176,8 @@ export default {
 #app {
   width: 100vw;
   height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   /* display: grid; */
   /* grid-template-rows: 2%, 98%;  */
 }

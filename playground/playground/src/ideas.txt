@@ -1,0 +1,19 @@
+we will need to funtions:
+1. recommendations
+2. Planing.
+
+
+if it is recommendations, without the time sequential events.
+we can generate some categorical recommendations,
+for example:
+1. Natural views
+2. Museums
+3. Restaurants.
+4. Funs 
+
+
+if it is planing, we wonot need to care when to arrive the destinations.
+we only need to think about 
+1. events and orders
+2. accomendations
+3. summaries. like the expenses.

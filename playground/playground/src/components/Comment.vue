@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <ul class="comment-container">
+
+    <li class="comment-container">
       <div v-if="isEditing">
           <input
           v-model="editableComment"
@@ -18,8 +18,8 @@
           <button class="menu-option" @click="deleteComment">Delete</button>
           </div>
       </div>
-      </ul>
-  </div>
+    </li>
+
 </template>
 
 <script>
@@ -93,18 +93,20 @@ export default {
 .comment-container {
   position: relative;
   border: 0px solid #ccc;
-  padding: 5px;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 200px;
-  margin: 20px;
+  max-width: 220px;
+  margin-top: 5px;
+  margin-left: 30px;
+  
 }
 
 .comment-text {
   margin: 0;
-  width: 180px;
+  width: 220px;
+  padding: 5px;
 }
 
 .comment-input {
@@ -148,5 +150,7 @@ export default {
 }
 .comment-container:hover {
   background-color: #f0f0f0;
+  border-radius: 5px;
+  
 }
 </style>
