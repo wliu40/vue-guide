@@ -14,8 +14,10 @@
       <div class="menu-container">
           <span class="three-dots" @click="toggleMenu">...</span>
           <div class="dropdown-menu" v-if="showMenu">
-          <button class="menu-option" @click="editComment">Rename</button>
-          <button class="menu-option" @click="deleteComment">Delete</button>
+          <button class="menu-option" @click="editComment"> 
+            <font-awesome-icon id="rename-icon" :icon="['fas', 'pen']" />  Rename</button>
+          <button class="menu-option" @click="deleteComment">
+            <font-awesome-icon id="delete-icon" :icon="['fas', 'trash']" />  Delete</button>
           </div>
       </div>
     </li>
@@ -143,6 +145,8 @@ export default {
   background: none;
   cursor: pointer;
   text-align: left;
+  color:#A9A9A9;
+  font-size: small;
 }
 
 .menu-option:hover {
@@ -153,4 +157,12 @@ export default {
   border-radius: 5px;
   
 }
+#rename-icon {
+  color: #A9A9A9;
+}
+
+#delete-icon {
+  color: #A9A9A9;
+}
+
 </style>

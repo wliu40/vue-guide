@@ -1,13 +1,21 @@
 <template>
     <div class="chatbox-container">
+        <font-awesome-icon id="advance-setting" icon="cogs" />
         <textarea ref="chatbox" id="chatbox" 
-        rows="2" 
-        placeholder="Type your message..." 
+        placeholder="Plan my trip to New York City on this weekend! I want to visit the Statue of Liberty and I also want try some local food." 
         v-model="newComment"
         @input="adjustHeight" 
         @keyup.enter="addComment"
         ></textarea>
-        <button @click="addComment" id="submit-button">Submit</button>
+        <!-- <button @click="addComment" id="submit-button">Submit</button>  -->
+
+        <font-awesome-icon icon="circle-up"
+        @click="addComment" 
+        id="submit-button" 
+        :class="{ active: newComment }" 
+        :disabled="!newComment"
+        ></font-awesome-icon>
+
     </div>
 
  
@@ -66,10 +74,12 @@
 
 .chatbox-container {
   position: relative;
+  align-items: center;
   display: flex;
   width: 700px;
+  margin: 0 auto;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 20px;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
@@ -82,15 +92,52 @@
   border: none;
   outline: none;
   font-size: 16px;
-  line-height: 1.4;
-  padding: 5px;
+  line-height: 1.5;
+  padding: 15px;
   box-sizing: border-box;
+  flex: 1;
+  background-color: transparent;
 }
 
+#submit-button:disabled {
+  cursor: not-allowed;
+}
 #submit-button {
-  resize: none;
-  padding: 20px;
-  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  color: white;
+  padding: 0;
+  font-size: 24px;
+}
+
+#submit-button.active {
+  background-color: rgb(71, 214, 35);
+}
+
+#submit-button:disabled {
+  cursor: not-allowed;
+
+}
+#advance-setting {
+  cursor: pointer;
+  padding: 5px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  transition: background-color 0.3s ease;
+  color:#A9A9A9;
+}
+
+#advance-setting:hover {
+  color: black;
 }
 
   </style>

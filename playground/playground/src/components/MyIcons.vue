@@ -1,28 +1,28 @@
 <template>
     <ul>
       <li>
-        <font-awesome-icon icon="pen" /> Rename
+        <font-awesome-icon icon="pen" style="color: #A9A9A9;" /> Rename
       </li>
       <li>
-        <font-awesome-icon icon="trash" /> Delete
+        <font-awesome-icon icon="trash" style="color: #D3D3D3;" /> Delete
       </li>
       <li>
-        <font-awesome-icon icon="upload" /> Export
+        <font-awesome-icon icon="upload" style="color: #2196F3;" /> Export
       </li>
       <li>
-        <font-awesome-icon icon="check" /> Submit
+        <font-awesome-icon icon="check" style="color: #8BC34A;" /> Submit
       </li>
       <li>
-        <font-awesome-icon icon="cogs" /> Advanced Setting
+        <font-awesome-icon icon="cogs" style="color: #FF9800;" /> Advanced Setting
       </li>
       <li>
-        <font-awesome-icon icon="home" /> Home
+        <font-awesome-icon icon="home" style="color: #673AB7;" /> Home
       </li>
       <li>
-        <font-awesome-icon icon="envelope" /> Email
+        <font-awesome-icon icon="envelope" style="color: #3F51B5;" /> Email
       </li>
       <li>
-        <font-awesome-icon :icon="['fab', 'twitter']" /> Twitter
+        <font-awesome-icon :icon="['fab', 'twitter']" style="color: #1DA1F2;" /> Twitter
       </li>
     </ul>
   </template>

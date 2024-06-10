@@ -10,10 +10,17 @@ import {
   faEnvelope, 
   faTrash, 
   faPen, 
-  faUpload, 
+  faUpload,
+  faDownload,
   faCheck, 
-  faCogs 
+  faCogs, 
+  faArrowUp, 
+  faCircleUp,
+  faThumbsUp,
+  faThumbsDown
+
 } from '@fortawesome/free-solid-svg-icons';
+// import { faCircleUp } from '@fortawesome/free-regular-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 library.add(
@@ -24,7 +31,12 @@ library.add(
   faUpload, 
   faCheck, 
   faCogs, 
-  faTwitter
+  faArrowUp, 
+  faTwitter,
+  faCircleUp,
+  faDownload,
+  faThumbsUp,
+  faThumbsDown
 );
 
 

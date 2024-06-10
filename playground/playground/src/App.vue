@@ -34,7 +34,12 @@
 
         <div class="events-container">
           <Cards :events="events" class="events-seq"/>
-          <button @click="saveEvent" class="events-save-button">Export</button>
+          <div class="feedback-icons">          
+          <button @click="likeEvents" class="events-like-button"><font-awesome-icon  :icon="['fas', 'thumbs-up']" /></button>
+          <button @click="dislikeEvents" class="events-dislike-button"><font-awesome-icon  :icon="['fas', 'thumbs-down']" /></button>
+          <button @click="emailEvents" class="events-email-button"><font-awesome-icon  :icon="['fas', 'envelope']" /></button>
+          <button @click="saveEvents" class="events-save-button"><font-awesome-icon  :icon="['fas', 'download']" /></button>
+        </div>
         </div>
       </div>
 
@@ -124,9 +129,19 @@ export default {
       this.showDialog = false;
       this.commentToDelete = null;
     },
-    saveEvent() {
+    likeEvents() {
+      console.log('Liking events...');
+    },
+    dislikeEvents() {
+      console.log('Disliking events...');
+    },
+    emailEvents() {
+      console.log('Emailing events...');
+    },
+    saveEvents() {
       console.log('Exporting events...');
     },
+
     cancelDelete() {
       this.showDialog = false;
       this.commentToDelete = null;
@@ -233,7 +248,39 @@ export default {
   height: calc(100vh - 50px);
  }
 
-.events-save-button {
+.feedback-icons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.events-like-button, .events-dislike-button, .events-email-button, .events-save-button {
+  height: 40px;
+  width: 40px; 
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-right: 10px;
+  color: #a9a9a9;
+}
+.events-like-button:hover{
+  background-color: #f0f0f0;
+  color: #333;
+}
+.events-dislike-button:hover{
+  background-color: #f0f0f0;
+  color: #333;
+}
+.events-email-button:hover{
+  background-color: #f0f0f0;
+  color: #333;
+}
+.events-save-button:hover{
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+
+/* .events-save-button {
   position: absolute;
   bottom: 20px;
   right: 20px;
@@ -241,7 +288,7 @@ export default {
   width: 100px; 
   background-color: #f0f0f0;
   padding: 10px;
-}
+} */
 
 /* .comments-container {
   position: fixed;
