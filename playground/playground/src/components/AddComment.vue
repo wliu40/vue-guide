@@ -9,7 +9,7 @@
         ></textarea>
         <!-- <button @click="addComment" id="submit-button">Submit</button>  -->
 
-        <font-awesome-icon icon="circle-up"
+        <font-awesome-icon icon="check"
         @click="addComment" 
         id="submit-button" 
         :class="{ active: newComment }" 
@@ -107,19 +107,19 @@
   cursor: pointer;
   transition: background-color 0.3s;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: gray;
-  color: white;
+  background-color: transparent;
+  color: transparent;
   padding: 0;
   font-size: 24px;
 }
 
 #submit-button.active {
-  background-color: rgb(71, 214, 35);
+  color:black;
 }
 
 #submit-button:disabled {

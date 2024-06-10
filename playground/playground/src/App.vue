@@ -34,11 +34,12 @@
 
         <div class="events-container">
           <Cards :events="events" class="events-seq"/>
-          <div class="feedback-icons">          
-          <button @click="likeEvents" class="events-like-button"><font-awesome-icon  :icon="['fas', 'thumbs-up']" /></button>
-          <button @click="dislikeEvents" class="events-dislike-button"><font-awesome-icon  :icon="['fas', 'thumbs-down']" /></button>
-          <button @click="emailEvents" class="events-email-button"><font-awesome-icon  :icon="['fas', 'envelope']" /></button>
-          <button @click="saveEvents" class="events-save-button"><font-awesome-icon  :icon="['fas', 'download']" /></button>
+          <div class="feedback-icons">
+
+          <font-awesome-icon  :icon="['fas', 'thumbs-up']" @click="likeEvents" class="events-like-button"/>
+          <font-awesome-icon  :icon="['fas', 'thumbs-down']" @click="dislikeEvents" class="events-dislike-button"/>
+          <font-awesome-icon  :icon="['fas', 'envelope']" @click="emailEvents" class="events-email-button" />
+          <font-awesome-icon  :icon="['fas', 'download']" @click="saveEvents" class="events-save-button"/>
         </div>
         </div>
       </div>
@@ -244,7 +245,7 @@ export default {
 
 .events-seq {
   flex: 1;
-  overflow: auto; /* Add scrollbar if content overflows */
+  overflow: auto; 
   height: calc(100vh - 50px);
  }
 
@@ -255,10 +256,10 @@ export default {
 }
 
 .events-like-button, .events-dislike-button, .events-email-button, .events-save-button {
-  height: 40px;
-  width: 40px; 
-  background-color: #f0f0f0;
-  padding: 10px;
+  height: 15px;
+  width: 15px; 
+  background-color: transparent;
+  padding: 5px;
   margin-right: 10px;
   color: #a9a9a9;
 }
